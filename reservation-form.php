@@ -84,7 +84,7 @@ if(isset($_POST['envoi'])){
                 <label for="confirmpassword">Confirmation de password</label>
                 <Input type="text" name="confirmpassword">
 
-                <input type="submit" name="envoi">
+                <input type="submit" name="envoi" value="Envoi de la réservation">
             </form>
         </div>
 
