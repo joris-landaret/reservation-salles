@@ -1,4 +1,5 @@
 <?php
+session_start();
 $erreur = "";
 // connection à la base de donné
 include('connect.php');
@@ -13,7 +14,7 @@ var_dump($request_fetch_all);
 if(isset($_POST['envoi'])){
     
     //si les champs sont remplis
-    if($_POST['login'] && $_POST['password'] && $_POST['confirmpassword']){
+    if($_POST['titre'] && $_POST['debut'] && $_POST['fin'] && $_POST['fin']){
         
         $login = $_POST['login'];
         $pass = $_POST['password'];
@@ -36,7 +37,7 @@ if(isset($_POST['envoi'])){
             
             if($log_ok == true){
 
-                $sql = "INSERT INTO `utilisateurs` (`login`,`password`) 
+                $sql = "INSERT INTO `reservation` (`login`,`password`) 
                 VALUE ('$login','$pass')";
                 $request2 = $mysqli -> query($sql);
                 //echo "ok";
@@ -72,17 +73,43 @@ if(isset($_POST['envoi'])){
 
         <div>
             <h1>Formulaire de réservation</h1>
-            <br>
+            <p><br>Utilisateur : <?php echo $_SESSION['login'];?></p>
+            <p><br>Titre :</p>
+            <p><?php ?></p>
             <?= $erreur ?>
             <form action="" method="post">
-                <label for="login">Login</label>
-                <Input type="text" name="login">
+                <label for="debut">Heure de début</label>
+                <select name="debut">
+                    <option value="8h00">8h00</option>
+                    <option value="9h00">9h00</option>
+                    <option value="10h00">10h00</option>
+                    <option value="11h00">11h00</option>
+                    <option value="12h00">12h00</option>
+                    <option value="13h00">13h00</option>
+                    <option value="14h00">14h00</option>
+                    <option value="15h00">15h00</option>
+                    <option value="16h00">16h00</option>
+                    <option value="17h00">17h00</option>
+                    <option value="18h00">18h00</option>
+                </select>        
 
-                <label for="password">Password</label>
-                <Input type="text" name="password">
+                <label for="fin">Heure de fin</label>
+                <select name="fin">
+                    <option value="9h00">9h00</option>
+                    <option value="10h00">10h00</option>
+                    <option value="11h00">11h00</option>
+                    <option value="12h00">12h00</option>
+                    <option value="13h00">13h00</option>
+                    <option value="14h00">14h00</option>
+                    <option value="15h00">15h00</option>
+                    <option value="16h00">16h00</option>
+                    <option value="17h00">17h00</option>
+                    <option value="18h00">18h00</option>
+                    <option value="19h00">19h00</option>
+                </select> 
 
-                <label for="confirmpassword">Confirmation de password</label>
-                <Input type="text" name="confirmpassword">
+                <label for="date">Date</label>
+                <Input type="date" name="date">
 
                 <input type="submit" name="envoi" value="Envoi de la réservation">
             </form>
