@@ -15,6 +15,7 @@
                 <li><a href="http://reservationsalles/connexion.php">Connexion</a></li>
                 <li><a href="http://reservationsalles/inscription.php">Inscription</a></li>
                 <?php endif; ?>
+                <li><a href="http://reservationsalles/reservation-form.php">Réservation</a></li>
             </ul>
         </div>
 
