@@ -71,7 +71,7 @@ if(isset($_POST['envoi'])){
     <main>
 
         <div>
-            <h1>Inscrit toi !!!</h1>
+            <h1>Formulaire de réservation</h1>
             <br>
             <?= $erreur ?>
             <form action="" method="post">
