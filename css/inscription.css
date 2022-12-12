@@ -20,7 +20,7 @@ input{
     margin-bottom: 20px;
     border: 10px solid green;
 }
-div h1{
+main div h1{
     border: 10px solid rgb(0, 105, 128);
     /*color: blueviolet;*/
     display: flex;
