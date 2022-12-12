@@ -4,7 +4,7 @@ $erreur = "";
 // connection à la base de donné
 include('connect.php');
 
-$request = $mysqli -> query("SELECT * FROM utilisateurs");
+$request = $mysqli -> query("SELECT * FROM reservations");
 
 $request_fetch_all = $request -> fetch_all();
 
