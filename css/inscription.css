@@ -1,0 +1,28 @@
+*{margin: 0;}
+
+main div {
+    display: flex;
+    flex-direction: column;
+    border: blue 5px solid;
+    margin-left: 40%;
+    margin-right: 40%;
+}
+div form{
+    /*background-color: blueviolet;*/
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 20px;
+}
+input{
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 10px solid green;
+}
+h1{
+    border: 10px solid rgb(0, 105, 128);
+    /*color: blueviolet;*/
+    display: flex;
+    justify-content: center;
+}

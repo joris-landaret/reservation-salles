@@ -1,0 +1,25 @@
+footer{
+    /*border: 5px solid yellow;*/
+    background: black;
+    background: linear-gradient(155deg, rgba(212,16,16,1) 7%, rgba(243,154,67,1) 17%, rgba(247,240,24,1) 31%, rgba(94,247,24,1) 45%, rgba(24,90,247,1) 59%, rgba(187,24,247,1) 73%, rgba(243,24,247,1) 87%); 
+}
+footer div{
+    display: flex;
+    justify-content: space-evenly;
+}
+footer div a{
+    display: flex;
+    align-items: center;
+    /* border: 5px solid rgb(255, 17, 0); */
+    width: 10%;
+    justify-content: center;
+}
+footer div a img{
+    /*border: 5px solid cyan;*/
+    width: 67%;
+    display: flex;
+    height: 71px;
+}
+#git{
+    border-radius: 49%;
+}
