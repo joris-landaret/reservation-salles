@@ -4,7 +4,7 @@ session_start();
 include('connect.php');
 
 // $request = $mysqli -> query("SELECT login,date, commentaire 
-//                             FROM utilisateurs
+//                             FROM reservations
 //                             INNER JOIN commentaires
 //                             on utilisateurs.id = commentaires.id_utilisateur
 //                             ORDER BY date DESC");
@@ -37,16 +37,103 @@ include('connect.php');
             
             <form action="" method="post">
 
-                <table border="1" cellspacing="5" cellpadding="5" bgcolor=""> 
+                <table border cellspacing="5" cellpadding="5" bgcolor=""> 
                     <tr> 
-                        <th>lundi</th>
-                        <th>mardi</th> 
-                        <th>mercredi</th>
-                        <th>jeudi</th>
-                        <th>vendredi</th>
-                        <th>samedi</th>
-                        <th>dimanche</th>
+                        <th></th>
+                        <th>lundi 19</th>
+                        <th>mardi 20</th> 
+                        <th>mercredi 21</th>
+                        <th>jeudi 22</th>
+                        <th>vendredi 23</th>
+                    </tr>
+                    <tr>
+                        <td>8h</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                     </tr> 
+                    <tr>
+                        <td>9h</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>10h</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>11h</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>12h</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>13h</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>14h</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>15h</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>16h</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>17h</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>18h</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
                     <?php
                     
                     //boucle dans une boucle
