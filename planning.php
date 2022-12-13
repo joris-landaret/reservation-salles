@@ -3,11 +3,11 @@ session_start();
 // connection à la base de donné
 include('connect.php');
 
-$request = $mysqli -> query("SELECT login,date, commentaire 
-                            FROM utilisateurs
-                            INNER JOIN commentaires
-                            on utilisateurs.id = commentaires.id_utilisateur
-                            ORDER BY date DESC");
+// $request = $mysqli -> query("SELECT login,date, commentaire 
+//                             FROM utilisateurs
+//                             INNER JOIN commentaires
+//                             on utilisateurs.id = commentaires.id_utilisateur
+//                             ORDER BY date DESC");
 
 //$request_fetch_all = $request -> fetch_array();
 
@@ -37,22 +37,28 @@ $request = $mysqli -> query("SELECT login,date, commentaire
             
             <form action="" method="post">
 
-                <table border="5" cellspacing="5" cellpadding="5" bgcolor=""> 
+                <table border="1" cellspacing="5" cellpadding="5" bgcolor=""> 
                     <tr> 
-                        <th>login</th>
-                        <th>date</th> 
-                        <th>commentaire</th>
+                        <th>lundi</th>
+                        <th>mardi</th> 
+                        <th>mercredi</th>
+                        <th>jeudi</th>
+                        <th>vendredi</th>
+                        <th>samedi</th>
+                        <th>dimanche</th>
                     </tr> 
                     <?php
                     
-                    while($request_fetch_all = $request -> fetch_array()){
+                    //boucle dans une boucle
+
+                    // while($request_fetch_all = $request -> fetch_array()){
                      
-                        echo "<tr>
-                                <td>".$request_fetch_all['login']."</td>
-                                <td>".$request_fetch_all['date']."</td>
-                                <td>".$request_fetch_all['commentaire']."</td> 
-                              </tr>";
-                    }
+                    //     echo "<tr>
+                    //             <td>".$request_fetch_all['login']."</td>
+                    //             <td>".$request_fetch_all['date']."</td>
+                    //             <td>".$request_fetch_all['commentaire']."</td> 
+                    //           </tr>";
+                    // }
                     
                     ?>
                     
