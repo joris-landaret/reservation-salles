@@ -19,6 +19,7 @@ $request = $mysqli -> query("SELECT * FROM reservations");
 // }
 
 
+
 ?>
 
 <!DOCTYPE html>
@@ -110,11 +111,7 @@ $request = $mysqli -> query("SELECT * FROM reservations");
                     </tr>
                     <tr>
                         <td>15h</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                      
                     </tr>
                     <tr>
                         <td>16h</td>
@@ -126,11 +123,7 @@ $request = $mysqli -> query("SELECT * FROM reservations");
                     </tr>
                     <tr>
                         <td>17h</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                       
                     </tr>
                     <tr>
                         <td>18h</td>
@@ -149,19 +142,24 @@ $request = $mysqli -> query("SELECT * FROM reservations");
                         $titre = $request_fetch_all['titre'];
                         $debut = $request_fetch_all['debut'];
                         $fin = $request_fetch_all['fin'];
+                        $datetime_debut = new DateTime($debut);
+                        $datetime_fin = new DateTime($debut);
+                        //$forma = format('d F Y à H:i');
 
-                        if($){
+                        echo $datetime_debut->format('d F Y');
+
+                        // if($){
                             
-                        }
+                        // }
 
-                        // echo "<tr>
-                        //         <td>".$request_fetch_all['titre']."</td>
-                        //         <td></td>
-                        //         <td></td>
-                        //         <td></td>
-                        //         <td></td>
-                        //         <td></td>
-                        //       </tr>";
+                        echo "<tr>
+                                <td>$debut</td>
+                                <td>$fin</td>
+                                <td>$titre</td>
+                                <td>".$datetime_debut->format('d F Y')."</td>
+                                <td>".$datetime_fin->format('d F Y')."</td>
+                                <td></td>
+                              </tr>";
                     }
                     
                     ?>
