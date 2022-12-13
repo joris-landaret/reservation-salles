@@ -3,16 +3,22 @@ session_start();
 // connection à la base de donné
 include('connect.php');
 
-// $request = $mysqli -> query("SELECT login,date, commentaire 
-//                             FROM reservations
-//                             INNER JOIN commentaires
-//                             on utilisateurs.id = commentaires.id_utilisateur
-//                             ORDER BY date DESC");
+$request = $mysqli -> query("SELECT * FROM reservations");
+
+//$request_fetch_all = $request -> fetch_all();
 
 //$request_fetch_all = $request -> fetch_array();
 
 //var_dump($request_fetch_all);
 //echo ".$request_fetch_all[0]."
+
+// while($request_fetch_all = $request -> fetch_all()){
+//     echo "<tr>
+//             <td>".$request_fetch_all['titre']."</td> 
+//           </tr>";
+// }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -33,11 +39,11 @@ include('connect.php');
     <main>
 
         <div>
-            <h1>Livre d'or</h1>
+            <h1>Planning</h1>
             
             <form action="" method="post">
 
-                <table border cellspacing="5" cellpadding="5" bgcolor=""> 
+                <table border cellspacing="5" cellpadding="5" bgcolor="cyan"> 
                     <tr> 
                         <th></th>
                         <th>lundi 19</th>
@@ -138,14 +144,25 @@ include('connect.php');
                     
                     //boucle dans une boucle
 
-                    // while($request_fetch_all = $request -> fetch_array()){
-                     
-                    //     echo "<tr>
-                    //             <td>".$request_fetch_all['login']."</td>
-                    //             <td>".$request_fetch_all['date']."</td>
-                    //             <td>".$request_fetch_all['commentaire']."</td> 
-                    //           </tr>";
-                    // }
+                    while($request_fetch_all = $request -> fetch_array()){
+
+                        $titre = $request_fetch_all['titre'];
+                        $debut = $request_fetch_all['debut'];
+                        $fin = $request_fetch_all['fin'];
+
+                        if($){
+                            
+                        }
+
+                        // echo "<tr>
+                        //         <td>".$request_fetch_all['titre']."</td>
+                        //         <td></td>
+                        //         <td></td>
+                        //         <td></td>
+                        //         <td></td>
+                        //         <td></td>
+                        //       </tr>";
+                    }
                     
                     ?>
                     
