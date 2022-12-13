@@ -74,10 +74,11 @@ if(isset($_POST['envoi'])){
         <div>
             <h1>Formulaire de réservation</h1>
             <p><br>Utilisateur : <?php echo $_SESSION['login'];?></p>
-            <p><br>Titre :</p>
-            <p><?php ?></p>
             <?= $erreur ?>
             <form action="" method="post">
+                <label for="titre">Titre :</label>
+                <input type="text" name="titre">
+
                 <label for="debut">Heure de début</label>
                 <select name="debut">
                     <option value="8h00">8h00</option>
@@ -110,6 +111,9 @@ if(isset($_POST['envoi'])){
 
                 <label for="date">Date</label>
                 <Input type="date" name="date">
+
+                <label for="description">Description :</label>
+                <Input type="text" name="description">
 
                 <input type="submit" name="envoi" value="Envoi de la réservation">
             </form>
