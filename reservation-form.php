@@ -16,19 +16,38 @@ if(isset($_POST['envoi'])){
     //si les champs sont remplis
     if($_POST['titre'] && $_POST['debut'] && $_POST['fin'] && $_POST['date'] && $_POST['description']){
         
-        $titre = $_POST['titre'];
+        $titre = htmlspecialchars($_POST['titre'],ENT_QUOTES);
         $debut = $_POST['debut'];
         $fin = $_POST['fin'];
         $date = $_POST['date'];
         $description = htmlspecialchars($_POST['description'],ENT_QUOTES);
 
-        //si les passwords son identique 
-        if ($debut != $fin){
+        //si les heures sont différentes 
+        if ($debut < $fin){
 
-            $sql = "INSERT INTO `reservations` (`titre`,`description`,`debut`,`fin`,`id_utilisateur`) 
-            VALUE ('$titre','$description','$date' '.$debut','$date' '.$fin',".$_SESSION['id'].")";
-            $request2 = $mysqli -> query($sql);
-            echo "ok";   
+             $request1 = $mysqli -> query("SELECT * FROM reservations 
+                                            WHERE debut 
+                                            BETWEEN $date' '.$debut AND $date' '.$fin");
+
+            // //si la date et heure ne sont pas les mêmes que dans la bdd
+            // $debut_ok = false;
+            //     //
+            // foreach($request_fetch_all as $reservation){
+            //     if($date.' '.$debut == $reservation [3]){
+            //         $debut_ok = false;
+            //         //break;
+            //     }
+            //     else{$debut_ok = true;}
+            // }
+            
+            // if($debut_ok == true){
+
+                $sql = "INSERT INTO `reservations` (`titre`,`description`,`debut`,`fin`,`id_utilisateur`) 
+                VALUE ('$titre','$description','$date' '.$debut','$date' '.$fin',".$_SESSION['id'].")";
+                $request2 = $mysqli -> query($sql);
+                echo "ok";
+            // }
+            // else{$erreur = '<p style = "color:red; font-weight:bold ">L heure de réservation est déja utilisé</p>';}   
         }
         else{$erreur = '<p style = "color:red; font-weight:bold ">les heures de début et de fin sont dentiques</p>';}
     }
