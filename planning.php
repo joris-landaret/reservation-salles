@@ -5,20 +5,51 @@ include('connect.php');
 
 $request = $mysqli -> query("SELECT * FROM reservations");
 
-//$request_fetch_all = $request -> fetch_all();
+$request_fetch_assoc = $request -> fetch_assoc();
 
 //$request_fetch_all = $request -> fetch_array();
 
-//var_dump($request_fetch_all);
+var_dump($request_fetch_assoc);
 //echo ".$request_fetch_all[0]."
 
-// while($request_fetch_all = $request -> fetch_all()){
-//     echo "<tr>
-//             <td>".$request_fetch_all['titre']."</td> 
-//           </tr>";
+// function table(int $col, int $row, int $week){
+//     for ($i=0; $i < $row; $i++) { 
+//         for ($j=0; $j < $col; $j++) { 
+//             $date = new DateTime("last sunday 7am $week week", new DateTimeZone("europe/paris"));
+            
+//             //$array[$i][];
+
+//         }
+//     }
 // }
 
+                    
+//boucle dans une boucle
 
+// while($request_fetch_all = $request -> fetch_assoc()){
+
+//     $titre = $request_fetch_all['titre'];
+//     $debut = $request_fetch_all['debut'];
+//     $fin = $request_fetch_all['fin'];
+//     $datetime_debut = new DateTime($debut);
+//     $datetime_fin = new DateTime($debut);
+//     //$forma = format('d F Y à H:i');
+
+//     echo $datetime_debut->format('d F Y');
+
+//     // if($){
+        
+//     // }
+
+//     echo "<tr>
+//             <td>$debut</td>
+//             <td>$fin</td>
+//             <td>$titre</td>
+//             <td>".$datetime_debut->format('d F Y')."</td>
+//             <td>".$datetime_fin->format('d F Y')."</td>
+//             <td></td>
+//             </tr>";
+// }
 
 ?>
 
@@ -45,126 +76,20 @@ $request = $mysqli -> query("SELECT * FROM reservations");
             <form action="" method="post">
 
                 <table border cellspacing="5" cellpadding="5" bgcolor="cyan"> 
-                    <tr> 
-                        <th></th>
-                        <th>lundi 19</th>
-                        <th>mardi 20</th> 
-                        <th>mercredi 21</th>
-                        <th>jeudi 22</th>
-                        <th>vendredi 23</th>
-                    </tr>
-                    <tr>
-                        <td>8h</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr> 
-                    <tr>
-                        <td>9h</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>10h</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>11h</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>12h</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>13h</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>14h</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>15h</td>
-                      
-                    </tr>
-                    <tr>
-                        <td>16h</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>17h</td>
-                       
-                    </tr>
-                    <tr>
-                        <td>18h</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+                  
                     <?php
-                    
-                    //boucle dans une boucle
+                    $days = ['lundi','mardi','mercredi','jeudi','vendredi'];
+                    $hours = ['7h','8h','9h','10h','11h','12h','13h','14h','15h','16h','17h','18h'];
 
-                    while($request_fetch_all = $request -> fetch_array()){
-
-                        $titre = $request_fetch_all['titre'];
-                        $debut = $request_fetch_all['debut'];
-                        $fin = $request_fetch_all['fin'];
-                        $datetime_debut = new DateTime($debut);
-                        $datetime_fin = new DateTime($debut);
-                        //$forma = format('d F Y à H:i');
-
-                        echo $datetime_debut->format('d F Y');
-
-                        // if($){
-                            
-                        // }
-
-                        echo "<tr>
-                                <td>$debut</td>
-                                <td>$fin</td>
-                                <td>$titre</td>
-                                <td>".$datetime_debut->format('d F Y')."</td>
-                                <td>".$datetime_fin->format('d F Y')."</td>
-                                <td></td>
-                              </tr>";
-                    }
-                    
-                    ?>
-                    
-                    
+                    for ($i=0; $i < 12; $i++): ?>
+                        <tr>
+                            <td><?=$hours[$i]?></td>
+                        <?php for ($j=0; $j < 5; $j++) : ?>
+                            <td><?=$days[$j].' '.$hours[$i]?></td>
+                        
+                        <?php endfor; ?>
+                    </tr>
+                    <?php endfor; ?>
                 </table>
             </form>
         </div>
@@ -174,3 +99,19 @@ $request = $mysqli -> query("SELECT * FROM reservations");
 </body>
 
 </html>
+
+
+<?php 
+
+// for ($i=0; $i < 13; $i++) { 
+    
+//     <tr>
+//         for ($j=0; $j < 8; $j++) { 
+//            <td>test</td>
+//         }
+//         <td>test</td>
+//     </tr>
+
+// }
+
+?>
