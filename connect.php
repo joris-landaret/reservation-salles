@@ -3,10 +3,10 @@
 
 $mysqli = new mysqli("localhost","root","","reservationsalles",3307);
 
-if ($mysqli) {
-  echo "connexion établie <br />";
-}
-else { 
-  die(mysqli_connect_error());
-}
+// if ($mysqli) {
+//   echo "connexion établie <br />";
+// }
+// else { 
+//   die(mysqli_connect_error());
+// }
 ?>

@@ -8,7 +8,7 @@ $request = $mysqli -> query("SELECT * FROM reservations");
 
 $request_fetch_all = $request -> fetch_all();
 
-var_dump($request_fetch_all);
+//var_dump($request_fetch_all);
 
 //appuyé sur le bouton submit
 if(isset($_POST['envoi'])){
