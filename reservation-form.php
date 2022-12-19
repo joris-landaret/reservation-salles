@@ -72,55 +72,55 @@ if(isset($_POST['envoi'])){
 <body>
     <?php include('header.php') ?>
     <main>
+        <div class="blanc">
+            <div>
+                <h1>Formulaire de réservation</h1>
+                <p><br>Utilisateur : <?php echo $_SESSION['login'];?></p>
+                <?= $erreur ?>
+                <form action="" method="post">
+                    <label for="titre">Titre :</label>
+                    <input type="text" name="titre">
 
-        <div>
-            <h1>Formulaire de réservation</h1>
-            <p><br>Utilisateur : <?php echo $_SESSION['login'];?></p>
-            <?= $erreur ?>
-            <form action="" method="post">
-                <label for="titre">Titre :</label>
-                <input type="text" name="titre">
+                    <label for="debut">Heure de début</label>
+                    <select name="debut">
+                        <option value="08:00">8h00</option>
+                        <option value="09:00">9h00</option>
+                        <option value="10:00">10h00</option>
+                        <option value="11:00">11h00</option>
+                        <option value="12:00">12h00</option>
+                        <option value="13:00">13h00</option>
+                        <option value="14:00">14h00</option>
+                        <option value="15:00">15h00</option>
+                        <option value="16:00">16h00</option>
+                        <option value="17:00">17h00</option>
+                        <option value="18:00">18h00</option>
+                    </select>        
 
-                <label for="debut">Heure de début</label>
-                <select name="debut">
-                    <option value="08:00">8h00</option>
-                    <option value="09:00">9h00</option>
-                    <option value="10:00">10h00</option>
-                    <option value="11:00">11h00</option>
-                    <option value="12:00">12h00</option>
-                    <option value="13:00">13h00</option>
-                    <option value="14:00">14h00</option>
-                    <option value="15:00">15h00</option>
-                    <option value="16:00">16h00</option>
-                    <option value="17:00">17h00</option>
-                    <option value="18:00">18h00</option>
-                </select>        
+                    <label for="fin">Heure de fin</label>
+                    <select name="fin">
+                        <option value="09:00">09h00</option>
+                        <option value="10:00">10h00</option>
+                        <option value="11:00">11h00</option>
+                        <option value="12:00">12h00</option>
+                        <option value="13:00">13:00</option>
+                        <option value="14:00">14h00</option>
+                        <option value="15:00">15h00</option>
+                        <option value="16:00">16h00</option>
+                        <option value="17:00">17h00</option>
+                        <option value="18:00">18h00</option>
+                        <option value="19:00">19h00</option>
+                    </select> 
 
-                <label for="fin">Heure de fin</label>
-                <select name="fin">
-                    <option value="09:00">09h00</option>
-                    <option value="10:00">10h00</option>
-                    <option value="11:00">11h00</option>
-                    <option value="12:00">12h00</option>
-                    <option value="13:00">13:00</option>
-                    <option value="14:00">14h00</option>
-                    <option value="15:00">15h00</option>
-                    <option value="16:00">16h00</option>
-                    <option value="17:00">17h00</option>
-                    <option value="18:00">18h00</option>
-                    <option value="19:00">19h00</option>
-                </select> 
+                    <label for="date">Date</label>
+                    <Input type="date" name="date">
 
-                <label for="date">Date</label>
-                <Input type="date" name="date">
+                    <label for="description">Description :</label>
+                    <Input type="text" name="description">
 
-                <label for="description">Description :</label>
-                <Input type="text" name="description">
-
-                <input type="submit" name="envoi" value="Envoi de la réservation">
-            </form>
+                    <input type="submit" name="envoi" value="Envoi de la réservation">
+                </form>
+            </div>
         </div>
-
     </main>
     <?php include('footer.php') ?>
 </body>
